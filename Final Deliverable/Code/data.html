@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Data Analytics for DHL Logistics Facilities</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Raleway", Arial, sans-serif}
+.w3-row img {margin-bottom: -8px}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div class="w3-bar w3-black w3-hide-small">
+<div align = "left">
+  <h2 class = w3-xlarge>DHL Logistics Facilities Analysis</h2></div>
+  <div class="w3-right w3-hide-small">
+      <a href= "Ind.html" class="w3-bar-item w3-button">Home</a>
+      <a href= "data.html" class="w3-bar-item w3-button">Prediction</a>
+      <a href= "dashboard.html" class="w3-bar-item w3-button">DashBoard</a>
+	  <!--<a href= "Ind.html" class="w3-bar-item w3-button">Home</a>-->
+    </div>
+</div>
+    <div class="container" data-aos="fade-up">
+      <div class="predictform">
+        <h2>Predict</h2>
+      <form action="{{ url_for('result') }}" method="POST" >
+
+          <label for="X-COORDINATE">ENTER THE X : </label>
+          <input type="text" name="X" id="X" required><br/><br/>
+          <label for="Y-COORDINATE">ENTER THE Y: </label>
+          <input type="text" name="Y" id="Y" required><br/><br/>
+          <label for="OBJECTID">ENTER THE OBJECTID : </label>
+          <input type="text" name="objectid" id="objectid" required><br/><br/>
+          <label for="FEATUREID">ENTER THE FEATURE ID : </label>
+          <input type="text" name="featureid" id="featureid" required><br/><br/>
+          <label for="ZIPCODE">ENTER THE ZIP CODE : </label>
+          <input type="text" name="zipcode" id="zipcode" required><br/><br/>
+          <label for="LATITUTDE">ENTER THE LATITUDE: </label>
+          <input type="text" name="latitude" id="latitude" required><br/><br/>
+          <label for="LONGITUDE">ENTER THE LONGITUDE: </label>
+          <input type="text" name="longitude" id="longitude" required><br/><br/>
+          <label for="CENSUS_CODE">ENTER THE CENSUS CODE: </label>
+          <input type="text" name="censuscode" id="censuscode" required><br/><br/>
+      </form>
+      <button onclick="myFunction()">Predict</button>
+      </div>
+    </div>
+    <p style="position:relative;color:red;font-size:larger">Predicted City is : <p id="demo"></p><br/></p>
+    <script>
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "Hello World";
+        }
+        </script>
+  </section>
+
+</body>
+</html>
+
+
+
+
